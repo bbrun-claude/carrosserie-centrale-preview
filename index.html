@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrosserie Centrale &mdash; Millau (12)</title>
+    <meta name="description" content="Carrosserie Centrale &agrave; Millau (12). Carrosserie, peinture, m&eacute;canique, vitrage, pneumatiques, d&eacute;pannage, location, nettoyage et climatisation. R&eacute;seau Axial depuis 2001.">
+    <link rel="icon" type="image/svg+xml" href="img/axial-logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Carrosserie Centrale &mdash; Millau (12)">
+    <meta property="og:description" content="Carrosserie, peinture, m&eacute;canique, vitrage. R&eacute;seau Axial &agrave; Millau depuis 2001.">
+    <meta property="og:type" content="website">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --maroon: #800000;
+            --maroon-dark: #5C0000;
+            --maroon-light: #A52A2A;
+            --dark: #1C1C1C;
+            --gray-700: #333;
+            --gray-600: #555;
+            --gray-200: #e0e0e0;
+            --gray-100: #f5f5f5;
+            --white: #fafafa;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--gray-700); background: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; border-bottom: 3px solid var(--maroon); box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .nav-logo { height: 44px; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { font-family: var(--font-heading); font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--maroon); }
+        .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; }
+        .nav-burger span { width: 26px; height: 3px; background: var(--dark); border-radius: 2px; }
+
+        .hero { position: relative; min-height: 88vh; display: flex; align-items: center; background: var(--dark); overflow: hidden; }
+        .hero-accent { position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%); clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); }
+        .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 120px 24px 80px; width: 100%; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 30px; padding: 8px 20px; margin-bottom: 28px; }
+        .hero-badge img { height: 28px; }
+        .hero-badge span { font-family: var(--font-heading); font-weight: 600; font-size: 0.78rem; color: #fff; text-transform: uppercase; letter-spacing: 0.08em; }
+        .hero h1 { font-family: var(--font-heading); font-weight: 900; font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1; color: #fff; margin-bottom: 24px; max-width: 600px; }
+        .hero h1 em { color: var(--maroon); font-style: normal; background: #fff; padding: 2px 12px; display: inline-block; margin-top: 8px; }
+        .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.65); max-width: 500px; margin-bottom: 40px; line-height: 1.7; }
+        .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.04em; padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: all 0.25s; border: none; cursor: pointer; }
+        .btn-maroon { background: var(--maroon); color: #fff; }
+        .btn-maroon:hover { background: var(--maroon-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(128,0,0,0.3); }
+        .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); }
+        .btn-ghost:hover { border-color: #fff; color: #fff; }
+
+        .stats-bar { background: var(--maroon); }
+        .stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+        .stat { padding: 24px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.15); }
+        .stat:last-child { border-right: none; }
+        .stat-num { font-family: var(--font-heading); font-weight: 900; font-size: 1.6rem; color: #fff; line-height: 1; }
+        .stat-label { font-family: var(--font-heading); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+        .section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+        .section-title { font-family: var(--font-heading); font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--dark); margin-bottom: 12px; line-height: 1.05; }
+        .section-subtitle { font-size: 0.95rem; color: var(--gray-600); max-width: 540px; margin-bottom: 48px; line-height: 1.7; }
+        .accent-line { width: 50px; height: 4px; background: var(--maroon); margin-bottom: 16px; border-radius: 2px; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .srv { background: #fff; border: 1px solid var(--gray-200); padding: 28px 24px; display: flex; gap: 18px; align-items: flex-start; border-radius: 6px; transition: all 0.3s; }
+        .srv:hover { border-color: var(--maroon); box-shadow: 0 8px 28px rgba(0,0,0,0.06); transform: translateY(-3px); }
+        .srv-icon { width: 48px; height: 48px; background: var(--maroon); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .srv-icon svg { width: 24px; height: 24px; fill: #fff; }
+        .srv h3 { font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; color: var(--dark); margin-bottom: 6px; }
+        .srv p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; }
+
+        .team { background: var(--gray-100); }
+        .team-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .team-photo { width: 100%; border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+        .team-text h2 { font-family: var(--font-heading); font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--dark); margin-bottom: 16px; }
+        .team-text p { color: var(--gray-600); line-height: 1.7; margin-bottom: 12px; }
+        .team-text strong { color: var(--dark); }
+
+        .network { background: #fff; }
+        .network-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px; text-align: center; }
+        .network h2 { font-family: var(--font-heading); font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: 16px; color: var(--dark); }
+        .network h2 em { color: var(--maroon); font-style: normal; }
+        .network p { color: var(--gray-600); line-height: 1.7; max-width: 600px; margin: 0 auto 20px; }
+        .network-list { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 28px; }
+        .network-list li { background: var(--gray-100); padding: 12px 24px; border-radius: 6px; border: 1px solid var(--gray-200); font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem; color: var(--gray-700); }
+
+        .contact-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; }
+        .contact-card { background: #fff; border-radius: 8px; padding: 32px; border: 1px solid var(--gray-200); }
+        .contact-card h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: var(--dark); margin-bottom: 16px; }
+        .contact-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--gray-100); }
+        .contact-item:last-child { border-bottom: none; }
+        .contact-item svg { width: 20px; height: 20px; fill: var(--maroon); flex-shrink: 0; }
+        .contact-item span { font-size: 0.92rem; color: var(--gray-700); }
+        .contact-item a { color: var(--dark); text-decoration: none; font-weight: 500; }
+        .contact-item a:hover { text-decoration: underline; color: var(--maroon); }
+        .hours-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-size: 0.9rem; }
+        .hours-row:last-child { border-bottom: none; }
+        .hours-day { color: var(--gray-700); font-weight: 500; }
+        .hours-time { color: var(--gray-600); }
+
+        footer { background: var(--dark); padding: 40px 24px; text-align: center; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; }
+        .footer-logo { height: 40px; margin-bottom: 16px; }
+        footer p { color: rgba(255,255,255,0.4); font-size: 0.82rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: fixed; top: 68px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 20px 24px; gap: 16px; border-top: 1px solid var(--gray-200); }
+            .nav-links.active { display: flex; }
+            .nav-burger { display: flex; }
+            .hero { min-height: 85vh; }
+            .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+            .hero-accent { width: 100%; clip-path: polygon(0 60%, 100% 40%, 100% 100%, 0% 100%); opacity: 0.7; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .stat:nth-child(2) { border-right: none; }
+            .services-grid { grid-template-columns: 1fr; }
+            .team-inner { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">
+                <img src="img/axial-logo.svg" alt="Carrosserie Centrale" class="nav-logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#equipe">&Eacute;quipe</a></li>
+                <li><a href="#reseau">R&eacute;seau</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-accent"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <img src="img/axial-logo.svg" alt="Axial">
+                <span>R&eacute;seau Axial depuis 2001</span>
+            </div>
+            <h1>Carrosserie Centrale<br><em>Millau</em></h1>
+            <p class="hero-sub">Laurent Brusque et son &eacute;quipe de 12 collaborateurs vous accueillent &agrave; Millau pour tous vos travaux de carrosserie, m&eacute;canique, vitrage et bien plus.</p>
+            <div class="hero-ctas">
+                <a href="tel:+33565613408" class="btn btn-maroon">05 65 61 34 08</a>
+                <a href="#services" class="btn btn-ghost">Nos services</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat">
+                <div class="stat-num">9</div>
+                <div class="stat-label">Services propos&eacute;s</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">12</div>
+                <div class="stat-label">Collaborateurs</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">2001</div>
+                <div class="stat-label">R&eacute;seau Axial</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">A75</div>
+                <div class="stat-label">Acc&egrave;s direct sortie autoroute</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" id="services">
+        <div class="accent-line"></div>
+        <h2 class="section-title">Nos services</h2>
+        <p class="section-subtitle">La Carrosserie Centrale prend en charge votre v&eacute;hicule pour tous types d'interventions, de la carrosserie &agrave; l'am&eacute;nagement.</p>
+        <div class="services-grid">
+            <div class="srv">
+                <div class="srv-icon">
+                    <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                </div>
+                <div>
+                    <h3>Carrosserie</h3>
+                    <p>R&eacute;paration et remise en &eacute;tat apr&egrave;s sinistre. D&eacute;bosselage, redressage, remplacement d'&eacute;l&eacute;ments. Suivi dossier assurance.</p>
+                </div>
+            </div>
+            <div class="srv">
+                <div class="srv-icon">
+                    <svg viewBox="0 0 24 24"><path d="M16.56 8.94L7.62 0 6.21 1.41l2.38 2.38-5.15 5.15c-.59.59-.59 1.54 0 2.12l5.5 5.5c.29.29.68.44 1.06.44s.77-.15 1.06-.44l5.5-5.5c.59-.58.59-1.53 0-2.12zM5.21 10L10 5.21 14.79 10H5.21zM19 11.5s-2 2.17-2 3.5c0 1.1.9 2 2 2s2-.9 2-2c0-1.33-2-3.5-2-3.5z"/></svg>
+                </div>
+                <div>
+                    <h3>Peinture automobile</h3>
+                    <p>Peinture compl&egrave;te ou partielle, raccords, vernis. Respect des teintes constructeur avec cabine de peinture professionnelle.</p>
+                </div>
+            </div>
+            <div class="srv">
+                <div class="srv-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                </div>
+                <div>
+                    <h3>M&eacute;canique</h3>
+                    <p>Entretien courant, r&eacute;visions, freinage, distribution, diagnostic &eacute;lectronique. Interventions toutes marques.</p>
+                </div>
+            </div>
+            <div class="srv">
+                <div class="srv-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                </div>
+                <div>
+                    <h3>Vitrage &amp; pare-brise</h3>
+                    <p>Remplacement et r&eacute;paration d'impact sur pare-brise, lunette arri&egrave;re, vitres lat&eacute;rales et r&eacute;troviseurs.</p>
+                </div>
+            </div>
+            <div class="srv">
+                <div class="srv-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="#fff"/></svg>
+                </div>
+                <div>
+                    <h3>Pneumatiques</h3>
+                    <p>Vente et montage de pneus toutes marques. &Eacute;quilibrage, g&eacute;om&eacute;trie et parall&eacute;lisme de votre v&eacute;hicule.</p>
+                </div>
+            </div>
+            <div class="srv">
+                <div class="srv-icon">
+                    <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                </div>
+                <div>
+                    <h3>D&eacute;pannage</h3>
+                    <p>Service de d&eacute;pannage et remorquage. Assistance rapide sur Millau et ses environs.</p>
+                </div>
+            </div>
+            <div class="srv">
+                <div class="srv-icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 6h-2V4c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2v2H3c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM7 4h10v2H7V4zm14 14H3V8h18v10z"/></svg>
+                </div>
+                <div>
+                    <h3>V&eacute;hicule de pr&ecirc;t</h3>
+                    <p>Mise &agrave; disposition d'un v&eacute;hicule de remplacement pendant la dur&eacute;e de l'intervention sur votre auto.</p>
+                </div>
+            </div>
+            <div class="srv">
+                <div class="srv-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-3.59 2.86-3.89 7.94-1.07 11.24.2.23.44.43.67.64.26.22.53.4.82.55 1.59.83 3.56.88 5.24-.07-.36-.5-.6-1.11-.6-1.79 0-1.12.7-2.07 1.68-2.44-.16-.72-.53-1.39-1.02-1.93zM14 18c-1.48 0-2.75-.81-3.45-2 .47.29 1.01.47 1.59.47 1.7 0 3.08-1.38 3.08-3.08 0-.49-.12-.96-.34-1.38-.93 1.46-.93 3.4 0 4.93-.46.36-.99.62-1.58.72-.21.03-.42.04-.63.04-.24 0-.47-.03-.7-.08z"/></svg>
+                </div>
+                <div>
+                    <h3>Nettoyage</h3>
+                    <p>Nettoyage int&eacute;rieur et ext&eacute;rieur de votre v&eacute;hicule. Lustrages, r&eacute;novation de carrosserie et protection.</p>
+                </div>
+            </div>
+            <div class="srv">
+                <div class="srv-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"/></svg>
+                </div>
+                <div>
+                    <h3>Climatisation</h3>
+                    <p>Entretien, recharge et r&eacute;paration de la climatisation. Diagnostic complet du circuit frigorifique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team" id="equipe">
+        <div class="team-inner">
+            <img src="img/dirigeant.jpg" alt="Laurent Brusque, dirigeant de la Carrosserie Centrale" class="team-photo">
+            <div class="team-text">
+                <div class="accent-line"></div>
+                <h2>Laurent Brusque et son &eacute;quipe</h2>
+                <p><strong>Laurent Brusque</strong> dirige la Carrosserie Centrale &agrave; Millau, situ&eacute;e en sortie d'A75 sur la D911. Avec <strong>12 collaborateurs</strong> &agrave; ses c&ocirc;t&eacute;s, il met son expertise au service de votre v&eacute;hicule.</p>
+                <p>Adh&eacute;rente au r&eacute;seau <strong>Axial depuis 2001</strong>, la carrosserie vous garantit un travail de qualit&eacute;, des pi&egrave;ces d'origine constructeur et un suivi rigoureux de chaque dossier assurance.</p>
+                <p>L'&eacute;quipe vous accueille du lundi au samedi, dans des locaux &eacute;quip&eacute;s pour toutes les interventions : carrosserie, peinture, m&eacute;canique, vitrage, d&eacute;pannage et bien plus.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="network" id="reseau">
+        <div class="network-inner">
+            <div class="accent-line" style="margin: 0 auto 16px;"></div>
+            <h2>Membre du r&eacute;seau <em>Axial</em></h2>
+            <p>La Carrosserie Centrale fait partie du r&eacute;seau Axial depuis 2001, r&eacute;f&eacute;rence nationale de la r&eacute;paration carrosserie. Une garantie de qualit&eacute; et de professionnalisme pour chaque intervention.</p>
+            <ul class="network-list">
+                <li>Pi&egrave;ces d'origine constructeur</li>
+                <li>Garantie pi&egrave;ces et main-d'&oelig;uvre</li>
+                <li>Agr&eacute;ment toutes assurances</li>
+                <li>Cabine de peinture certifi&eacute;e</li>
+                <li>&Eacute;quipements professionnels</li>
+                <li>D&eacute;pannage 24h/24</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-inner">
+            <div class="accent-line"></div>
+            <h2 class="section-title">Contactez-nous</h2>
+            <p class="section-subtitle">Besoin d'un devis carrosserie, d'une r&eacute;paration ou d'un entretien&nbsp;? Nous vous accueillons &agrave; Millau, en sortie d'A75.</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Coordonn&eacute;es</h3>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>100 Impasse Boris Vian, 12100 Millau</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <a href="tel:+33565613408">05 65 61 34 08</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <a href="mailto:carrosseriecentrale@free.fr">carrosseriecentrale@free.fr</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h3>Horaires d'ouverture</h3>
+                    <div class="hours-row"><span class="hours-day">Lundi</span><span class="hours-time">8h00 &ndash; 12h30 / 14h00 &ndash; 19h00</span></div>
+                    <div class="hours-row"><span class="hours-day">Mardi</span><span class="hours-time">8h00 &ndash; 12h30 / 14h00 &ndash; 19h00</span></div>
+                    <div class="hours-row"><span class="hours-day">Mercredi</span><span class="hours-time">8h00 &ndash; 12h30 / 14h00 &ndash; 19h00</span></div>
+                    <div class="hours-row"><span class="hours-day">Jeudi</span><span class="hours-time">8h00 &ndash; 12h30 / 14h00 &ndash; 19h00</span></div>
+                    <div class="hours-row"><span class="hours-day">Vendredi</span><span class="hours-time">8h00 &ndash; 12h30 / 14h00 &ndash; 19h00</span></div>
+                    <div class="hours-row"><span class="hours-day">Samedi</span><span class="hours-time">8h00 &ndash; 12h00</span></div>
+                    <div class="hours-row"><span class="hours-day">Dimanche</span><span class="hours-time">Ferm&eacute;</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <img src="img/axial-logo.svg" alt="Carrosserie Centrale" class="footer-logo" style="filter: brightness(0) invert(1); opacity: 0.6;">
+            <p>Carrosserie Centrale &mdash; R&eacute;seau Axial &mdash; &copy; 2026</p>
+            <p style="margin-top:6px;">100 Impasse Boris Vian, 12100 Millau &mdash; 05 65 61 34 08</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
